@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    active: local
+
+hystrix:
+  amqp:
+    url: amqp://e6efdad7-9d97-41da-bf85-2b9e78ca968c:ofgff796mpk00r14rr60fnujha@192.168.1.159/fee9281d-355e-4ffa-8525-cce3ed753bf8
+
+test:
+  interval: 1000
+  requests: 10

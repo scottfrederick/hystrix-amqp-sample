@@ -1,4 +1,4 @@
-package demo.web;
+package org.springframework.cloud.netflix.hystrix.sample.web;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -4,3 +4,6 @@ applications:
   memory: 512M
   instances: 1
   path: build/libs/hystrix-amqp-sample.jar
+  services: [circuit-breaker]
+  env:
+    SPRING_PROFILES_ACTIVE: cloud

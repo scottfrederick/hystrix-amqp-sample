@@ -2,6 +2,7 @@ buildscript {
     ext {
         springBootVersion = '1.2.2.RELEASE'
         springCloudVersion = '1.0.0.RELEASE'
+        springCloudConnectorsVersion = '1.0.0.BUILD-SNAPSHOT'
     }
     repositories {
         mavenCentral()
@@ -28,6 +29,7 @@ targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    mavenLocal()
     maven { url 'https://repo.spring.io/release' }
 }
 
@@ -42,6 +44,9 @@ dependencies {
     compile("org.springframework.cloud:spring-cloud-starter-hystrix")
     compile("org.springframework.cloud:spring-cloud-netflix-hystrix-amqp")
     compile("org.springframework.cloud:spring-cloud-starter-bus-amqp")
+
+    compile("org.springframework.cloud:spring-cloud-pivotal-cloudfoundry-connector:${springCloudConnectorsVersion}")
+    compile("org.springframework.cloud:spring-cloud-pivotal-spring-connector:${springCloudConnectorsVersion}")
 
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }

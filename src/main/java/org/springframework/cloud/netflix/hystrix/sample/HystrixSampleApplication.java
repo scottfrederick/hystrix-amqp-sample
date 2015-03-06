@@ -1,4 +1,4 @@
-package demo;
+package org.springframework.cloud.netflix.hystrix.sample;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

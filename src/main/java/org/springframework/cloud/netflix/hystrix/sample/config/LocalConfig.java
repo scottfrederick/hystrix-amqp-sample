@@ -1,4 +1,4 @@
-package demo.config;
+package org.springframework.cloud.netflix.hystrix.sample.config;
 
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.beans.factory.annotation.Value;

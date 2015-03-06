@@ -1,0 +1,24 @@
+= Spring Cloud Hystrix AMQP sample app
+
+== Building
+
+Build the app with the following command:
+
+[source,bash]
+----
+$ ./gradlew assemble
+----
+
+== Running on Cloud Foundry
+
+When running on CF, the app will expect to be bound to a Circuit Breaker service instance with the name `circuit-breaker`. Create a service instance and push the app with the following commands:
+
+[source,bash]
+----
+$ cf cs p-circuit-breaker-dashboard standard circuit-breaker
+$ cf push hystrix-ampq-sample
+----
+
+Once the app is running, browse to the app's route URL or `curl` the URL to drive some traffic to the app.
+
+Browse to the PCF App Console, click on the `manage` link for the `circuit-breaker` service, and see the traffic to the sample app in the Hystrix dashboard.

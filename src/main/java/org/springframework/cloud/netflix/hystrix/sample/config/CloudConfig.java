@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Profile;
 @Configuration
 @Profile("cloud")
 public class CloudConfig extends PivotalCloudConfig {
+	@Bean
 	@HystrixConnectionFactory
 	public ConnectionFactory hystrixConnectionFactory() {
 		return connectionFactory().hystrixConnectionFactory();

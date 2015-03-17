@@ -1,7 +1,7 @@
 buildscript {
     ext {
         springBootVersion = '1.2.2.RELEASE'
-        springCloudVersion = '1.0.0.RELEASE'
+        springCloudVersion = '1.0.1.BUILD-SNAPSHOT'
         springCloudConnectorsVersion = '1.0.0.BUILD-SNAPSHOT'
     }
     repositories {
@@ -31,6 +31,7 @@ repositories {
     mavenCentral()
     mavenLocal()
     maven { url 'https://repo.spring.io/release' }
+    maven { url 'https://repo.spring.io/snapshot' }
 }
 
 dependencyManagement {

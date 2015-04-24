@@ -1,7 +1,7 @@
 buildscript {
     ext {
         springBootVersion = '1.2.2.RELEASE'
-        springCloudVersion = '1.0.1.BUILD-SNAPSHOT'
+        springCloudVersion = '1.0.1.RELEASE'
         springCloudConnectorsVersion = '1.0.0.BUILD-SNAPSHOT'
     }
     repositories {
@@ -42,6 +42,7 @@ dependencyManagement {
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-actuator")
     compile("org.springframework.cloud:spring-cloud-starter-hystrix")
     compile("org.springframework.cloud:spring-cloud-netflix-hystrix-amqp")
     compile("org.springframework.cloud:spring-cloud-starter-bus-amqp")

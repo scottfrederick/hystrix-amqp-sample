@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 
 @Configuration
-@Profile("rabbit")
+@Profile("rabbits")
 public class RabbitConfig extends AbstractCloudConfig {
 	public static final String RABBIT_CONNECTION_FACTORY = "rabbitConnectionFactory";
 	public static final String SAMPLE_EXCHANGE = "sample-exchange";

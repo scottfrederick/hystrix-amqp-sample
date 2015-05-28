@@ -2,7 +2,7 @@ buildscript {
     ext {
         springBootVersion = '1.2.2.RELEASE'
         springCloudVersion = '1.0.2.RELEASE'
-        springCloudConnectorsVersion = '1.0.0.BUILD-SNAPSHOT'
+        springCloudConnectorsVersion = '1.0.0.M1'
     }
     repositories {
         mavenCentral()
@@ -29,8 +29,7 @@ targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
-    maven { url 'https://repo.spring.io/libs-release' }
-    maven { url 'https://repo.spring.io/libs-snapshot' }
+    maven { url 'https://repo.spring.io/libs-milestone' }
 }
 
 dependencyManagement {
@@ -39,17 +38,16 @@ dependencyManagement {
     }
 }
 
+ext['spring-cloud-connectors.version'] = '1.2.0.RC1'
+
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.springframework.boot:spring-boot-starter-actuator")
     compile("org.springframework.cloud:spring-cloud-starter-hystrix")
     compile("org.springframework.cloud:spring-cloud-netflix-hystrix-amqp")
 
-    compile("org.springframework.cloud:spring-cloud-cloudfoundry-connector:1.1.2.BUILD-SNAPSHOT")
-    compile("org.springframework.cloud:spring-cloud-spring-service-connector:1.1.2.BUILD-SNAPSHOT")
-
-    compile("org.springframework.cloud:spring-cloud-pivotal-cloudfoundry-connector:${springCloudConnectorsVersion}")
-    compile("org.springframework.cloud:spring-cloud-pivotal-spring-connector:${springCloudConnectorsVersion}")
+    compile("io.pivotal.spring.cloud:spring-cloud-pivotal-cloudfoundry-connector:${springCloudConnectorsVersion}")
+    compile("io.pivotal.spring.cloud:spring-cloud-pivotal-spring-connector:${springCloudConnectorsVersion}")
 
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }

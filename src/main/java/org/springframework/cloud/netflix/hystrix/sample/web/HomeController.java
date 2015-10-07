@@ -27,7 +27,11 @@ public class HomeController {
 	private String getConnectionFactoryDetails(ConnectionFactory connectionFactory, final String type) {
 		StringBuilder details = new StringBuilder("<br>" + type + " connection factory: ");
 		if (connectionFactory != null) {
-			details.append(connectionFactory.getHost()).append(":").append(connectionFactory.getPort());
+			details.append(connectionFactory.getHost()).
+					append(":").
+					append(connectionFactory.getPort()).
+					append("@").
+					append(connectionFactory.getVirtualHost());
 		}
 		return details.toString();
 	}

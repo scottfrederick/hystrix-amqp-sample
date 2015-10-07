@@ -21,8 +21,7 @@ public class RabbitConfig extends AbstractCloudConfig {
 	@Bean(name = RABBIT_CONNECTION_FACTORY)
 	@Primary
 	public ConnectionFactory rabbitConnectionFactory() {
-		ConnectionFactory connectionFactory = connectionFactory().rabbitConnectionFactory();
-		return connectionFactory;
+		return connectionFactory().rabbitConnectionFactory();
 	}
 
 	@Bean

@@ -22,3 +22,15 @@ $ cf push hystrix-ampq-sample
 Once the app is running, browse to the app's route URL or `curl` the URL to drive some traffic to the app.
 
 Browse to the PCF App Console, click on the `manage` link for the `circuit-breaker` service, and see the traffic to the sample app in the Hystrix dashboard.
+
+=== Multiple RabbitMQ connections
+
+In the default profile the app uses a circuit breaker, which uses RabbitMQ to send metrics to Spring Cloud Turbine AMQP. With the `rabbits` profile enabled, the app will expect a RabbitMQ service to be bound to the app for the app's own use. To enable this mode, follow these steps:
+
+[source,bash]
+----
+$ cf cs p-rabbitmq standard rabbitmq
+$ cf bs hystrix-ampq-sample rabbitmq
+$ cf set-env hystrix-amqp-sample SPRING_PROFILES_ACTIVE rabbits
+$ cf restage hystrix-ampq-sample
+----

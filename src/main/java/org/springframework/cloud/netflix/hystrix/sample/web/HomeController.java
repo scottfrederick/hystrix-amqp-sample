@@ -3,7 +3,6 @@ package org.springframework.cloud.netflix.hystrix.sample.web;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.netflix.hystrix.amqp.HystrixConnectionFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,16 +11,11 @@ public class HomeController {
 	@Autowired(required = false)
 	private ConnectionFactory connectionFactory;
 
-	@Autowired(required = false)
-	@HystrixConnectionFactory
-	private ConnectionFactory hystrixConnectionFactory;
-
 	@RequestMapping("/")
 	@HystrixCommand
 	public String home() {
 		return "Can you hear me now?<br>" +
-				getConnectionFactoryDetails(connectionFactory, "primary") +
-				getConnectionFactoryDetails(hystrixConnectionFactory, "hystrix");
+				getConnectionFactoryDetails(connectionFactory, "primary");
 	}
 
 	private String getConnectionFactoryDetails(ConnectionFactory connectionFactory, final String type) {
